@@ -1,0 +1,33 @@
+{# templates/tickets/list.twig #}
+{% extends "layout.twig" %}
+{% block body %}
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-xl font-semibold">Tickets</h2>
+    <div>
+      <a href="/tickets/create" class="px-4 py-2 bg-green-600 text-white rounded">New Ticket</a>
+      <a href="/dashboard" class="ml-3 px-4 py-2 border rounded">Back</a>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {% for t in tickets %}
+      <article class="bg-white p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">{{ t.title }}</h3>
+        <p class="mt-2 text-sm text-gray-600">{{ t.description|default('No description') }}</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="px-2 py-1 rounded text-sm {{ t.status == 'open' ? 'bg-green-100 text-green-800' : (t.status == 'in_progress' ? 'bg-amber-100 text-amber-800' : 'bg-gray-100 text-gray-800') }}">
+            {{ t.status }}
+          </span>
+          <div class="space-x-2">
+            <a href="/tickets/edit/{{ t.id }}" class="px-2 py-1 border rounded">Edit</a>
+            <form method="post" action="/tickets/delete/{{ t.id }}" class="inline" onsubmit="return confirm('Delete this ticket?');">
+              <button class="px-2 py-1 bg-red-600 text-white rounded">Delete</button>
+            </form>
+          </div>
+        </div>
+      </article>
+    {% else %}
+      <div class="col-span-full p-6 bg-white rounded shadow">No tickets yet.</div>
+    {% endfor %}
+  </div>
+{% endblock %}

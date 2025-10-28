@@ -1,0 +1,49 @@
+{% extends 'base.twig' %}
+{% block title %}Tickets - Tix{% endblock %}
+{% block content %}
+
+{# <div class="mt-8">
+  <div class="flex justify-between items-center">
+    <h2 class="text-2xl font-semibold">Tickets</h2>
+    <div>
+      <button id="create-ticket-btn" class="px-4 py-2 rounded bg-indigo-600 text-white">New Ticket</button>
+    </div>
+  </div>
+
+  <section class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="tickets-list">
+    <!-- JS will render ticket cards here -->
+  </section>
+</div> #}
+
+<!-- Ticket Modal (hidden by default) -->
+<div id="ticket-modal" class="fixed inset-0 bg-black bg-opacity-40 items-center justify-center hidden">
+  <div class="bg-white p-6 rounded w-full max-w-lg">
+    <h3 id="modal-title">Create Ticket</h3>
+    <form id="ticket-form" class="space-y-4 mt-4">
+      <div>
+        <label class="block text-sm">Title</label>
+        <input id="ticket-title" name="title" required class="mt-1 block w-full rounded border px-3 py-2" />
+        <p id="title-error" class="text-red-600 text-sm hidden"></p>
+      </div>
+      <div>
+        <label class="block text-sm">Status</label>
+        <select id="ticket-status" name="status" required class="mt-1 block w-full rounded border px-3 py-2">
+          <option value="">Select status</option>
+          <option value="open">open</option>
+          <option value="in_progress">in_progress</option>
+          <option value="closed">closed</option>
+        </select>
+        <p id="status-error" class="text-red-600 text-sm hidden"></p>
+      </div>
+      <div>
+        <label class="block text-sm">Description (optional)</label>
+        <textarea id="ticket-desc" class="mt-1 block w-full rounded border px-3 py-2" rows="3"></textarea>
+      </div>
+      <div class="flex justify-end gap-2">
+        <button type="button" id="cancel-ticket" class="px-4 py-2 rounded border">Cancel</button>
+        <button type="submit" class="px-4 py-2 rounded bg-indigo-600 text-white">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

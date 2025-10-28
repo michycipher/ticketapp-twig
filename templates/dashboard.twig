@@ -1,0 +1,55 @@
+{# templates/dashboard.twig #}
+{# {% include 'tickets/list.twig' with { tickets: tickets } %} #}
+{% extends "layout.twig" %}
+	{% block body %}
+		<main class='max-w-[1440px] mx-auto px-6 py-16 relative'> 
+    <h2 class="text-4xl sm:text-3xl font-semibold leading-tight mb-6">Dashboard</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div class="p-6 bg-white rounded-lg shadow">
+				<h3 class="text-sm text-gray-500">Total Tickets</h3>
+				<p class="text-3xl font-bold mt-3">{{ total }}</p>
+			</div>
+			<div class="p-6 bg-white rounded-lg shadow">
+				<h3 class="text-sm text-gray-500">Open</h3>
+				<p class="text-3xl font-bold mt-3">{{ open }}</p>
+			</div>
+			<div class="p-6 bg-white rounded-lg shadow">
+				<h3 class="text-sm text-gray-500">In Progress</h3>
+				<p class="text-3xl font-bold mt-3">{{ in_progress }}</p>
+			</div>
+		</div>
+
+		<div class="mt-8">
+			<a href="/tickets" class="px-4 py-2 bg-indigo-600 text-white rounded">Create Ticket</a>
+		</div>
+
+		<div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="tickets-list">
+			{% for ticket in tickets %}
+				<div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+					<div class="flex justify-between items-center mb-2">
+						<h4 class="text-xl font-bold text-gray-800">{{ ticket.title }}</h4>
+						<span class="text-xs px-2 py-1 rounded-full
+							{% if ticket.status == 'open' %}
+						bg-green-100 text-green-700
+							{% elseif ticket.status == 'in_progress' %}
+						bg-yellow-100 text-yellow-600
+							{% else %}
+						bg-gray-200 text-gray-600
+							{% endif %}
+							">
+							{{ ticket.status | capitalize }}
+						</span>
+					</div>
+					<p class="text-sm text-gray-600">{{ ticket.description }}</p>
+					<p class="text-xs text-gray-400 mt-2">Created:
+						{{ ticket.created_at|date("M d, Y H:i") }}</p>
+				</div>
+			{% else %}
+				<p class="text-gray-500 text-center">No tickets found.</p>
+			{% endfor %}
+		</div>
+	</main>
+
+
+{% endblock %}

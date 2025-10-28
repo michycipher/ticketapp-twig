@@ -1,0 +1,64 @@
+{# templates/layout.twig #}
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title>{{ title|default('Tix - TicketApp - Twig') }}</title>
+
+		<!-- Tailwind CDN -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+
+	<body class="font-sans bg-gray-50 text-gray-800 min-h-screen">
+
+		<header class="bg-white shadow-sm">
+			<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center justify-between h-16">
+					<a href="/" class="font-extrabold text-3xl bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">Tix</a>
+					<nav aria-label="Top Navigation" class="space-x-4">
+						{% if isAuthenticated %}
+							<a href="/dashboard" class="font-semibold text-purple-950 hover:text-purple-300">Dashboard</a>
+							<a href="/tickets/create" class="font-semibold text-purple-950 hover:text-purple-300">Tickets</a>
+							<a href="/auth/logout" class="px-3 py-3 rounded font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg hover:-translate-y-1 transition-transform">Logout</a>
+						{% else %}
+							<a href="/auth/login" class="font-semibold text-blue-600 hover:bg-blue-800 hover:rounded hover:text-white hover:px-3 hover:py-3 transition-all">Login</a>
+							<a href="/auth/register" class="px-3 py-3 rounded font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-500 shadow-lg hover:-translate-y-1 transition-transform">Get Started</a>
+						{% endif %}
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main class="">
+			<div class="">
+				{% if flash %}
+					{% if flash %}
+						<div class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+							<div class="text-green-500 bg-white px-6 py-3 rounded-md shadow-xl animate-fade-out">
+								{{ flash }}
+							</div>
+						</div>
+					{% endif %}
+				{% endif %}
+				{% block body %}{% endblock %}
+			</div>
+		</main>
+
+		<footer class="mt-12 border-t bg-white">
+			<div class="max-w-[1440px] mx-auto px-4 py-6">
+				<p class="text-sm text-gray-600">&copy;
+					{{ "now"|date("Y") }}
+					TicketApp — built with Twig & PHP</p>
+			</div>
+		</footer>
+
+		<script src="/assets/js/app.js" defer></script>
+	</body>
+</html>

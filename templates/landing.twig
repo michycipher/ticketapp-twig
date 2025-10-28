@@ -1,0 +1,99 @@
+{# templates/landing.twig #}
+{% extends "layout.twig" %}
+
+{% block body %}
+	{# HERO SECTION #}
+	{% set hero %}
+	<section
+		class="relative overflow-hidden bg-[#7C3AED] text-white py-20">
+
+		{# Floating circles for soft light effect #}
+		<div class="absolute w-[350px] h-[350px] bg-white opacity-10 rounded-full top-[-150px] right-[-100px]"></div>
+		<div class="absolute w-[300px] h-[300px] bg-white opacity-10 rounded-full bottom-[50px] left-[-200px]"></div>
+
+		{# Centered container for hero text and buttons #}
+		<div class="max-w-[1440px] mx-auto px-6 relative z-10 text-center">
+			<h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
+				Book Anything. Go Anywhere.
+			</h1>
+			<p class="text-lg sm:text-xl mb-10 max-w-2xl mx-auto text-white/90">
+				Book flights, concerts, events, and transportation seamlessly. One app for every journey and experience.
+			</p>
+
+			<div class="flex flex-wrap justify-center gap-6">
+				<a href="/auth/register" class="px-10 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg hover:-translate-y-1 transition-transform">
+					Get Started
+				</a>
+				<a href="/auth/login" class="px-10 py-4 rounded-lg font-semibold text-blue-600 bg-white shadow-lg hover:-translate-y-1 transition-transform">
+					Learn More
+				</a>
+			</div>
+		</div>
+	</section>
+	{# Wave SVG (bottom decoration) #}
+	<svg class="absolute w-full rotate-180" viewbox="0 0 1920 150" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="none">
+		<path d="M0,64 C320,120 640,20 960,64 C1280,108 1600,40 1920,64 L1920,150 L0,150 Z" fill="#7C3AED"/>
+	</svg>
+
+	{% endset %}
+
+	{{ hero|raw }}
+
+	{# WHY CHOOSE TIX SECTION #}
+	<section class="text-center mb-16 mt-24">
+		<h2 class="text-4xl font-extrabold text-gray-900 mb-4">Why Choose Tix?</h2>
+		<p class="text-lg text-gray-500 md:px-0 px-3">Everything you need for booking tickets, all in one place.</p>
+	</section>
+
+	{# FEATURES GRID SECTION #}
+	<section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+		<div class="bg-white flex flex-col items-center p-10 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all">
+			<h3 class="text-2xl font-bold mb-3 text-gray-900">Multi-Purpose Booking</h3>
+			<p class="text-gray-600">From flights and trains to concerts and sports events, book any ticket type with ease.</p>
+		</div>
+
+		<div class="bg-white flex flex-col items-center p-10 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all">
+			<h3 class="text-2xl font-bold mb-3 text-gray-900">Lightning Fast</h3>
+			<p class="text-gray-600">Instant booking confirmations and digital tickets delivered directly to your device.</p>
+		</div>
+
+		<div class="bg-white flex flex-col items-center p-10 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all">
+			<h3 class="text-2xl font-bold mb-3 text-gray-900">Secure & Trusted</h3>
+			<p class="text-gray-600">Bank-level encryption and secure payment processing for your peace of mind.</p>
+		</div>
+
+		<div class="bg-white flex flex-col items-center p-10 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all">
+			<h3 class="text-2xl font-bold mb-3 text-gray-900">Easy Payment</h3>
+			<p class="text-gray-600">Multiple payment options including cards, wallets, and buy-now-pay-later.</p>
+		</div>
+
+		<div class="bg-white flex flex-col items-center p-10 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all">
+			<h3 class="text-2xl font-bold mb-3 text-gray-900">Mobile Ready</h3>
+			<p class="text-gray-600">Access your tickets anytime, anywhere with our responsive mobile experience.</p>
+		</div>
+
+		<div class="bg-white flex flex-col items-center p-10 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all">
+			<h3 class="text-2xl font-bold mb-3 text-gray-900">Best Prices</h3>
+			<p class="text-gray-600">Compare prices across providers and get exclusive deals and early-bird offers.</p>
+		</div>
+	</section>
+
+	<section class="py-24 bg-white">
+		<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="relative bg-gradient-to-r from-blue-600 to-purple-500 text-white p-16 rounded-2xl text-center shadow-2xl overflow-hidden">
+				<div class="absolute w-[300px] h-[300px] bg-white opacity-10 rounded-full top-[-150px] right-[-100px]"></div>
+
+				<h2 class="text-4xl font-extrabold mb-6 relative z-10">
+					Ready to Get Started?
+				</h2>
+				<p class="text-xl mb-8 relative z-10">
+					Join thousands of happy users booking their tickets with Tix.
+				</p>
+				<a href="/auth/register" class="px-10 py-4 rounded-lg font-semibold text-blue-600 bg-white hover:-translate-y-1 transition-transform inline-block relative z-10 shadow-lg">
+					Create Free Account
+				</a>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

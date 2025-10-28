@@ -1,0 +1,11 @@
+{
+    "name": "michelle/ticketapp-twig",
+    "autoload": {
+        "psr-4": {
+            "Michelle\\TicketappTwig\\": "src/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.21"
+    }
+}

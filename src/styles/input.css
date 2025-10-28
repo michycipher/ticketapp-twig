@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom animation for SVG wave */
+@keyframes waveMotion {
+  0% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(12px) scaleY(1.03); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+.animate-wave {
+  animation: waveMotion 3s ease-in-out infinite;
+}
+
+/* Toast */
+@keyframes fade-out {
+  0% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+.animate-fade-out {
+  animation: fade-out 2s ease-in-out forwards;
+}
+
+

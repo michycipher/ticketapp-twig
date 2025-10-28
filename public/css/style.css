@@ -1,0 +1,28 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes waveMotion {
+  0% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(12px) scaleY(1.03); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+.animate-wave {
+  position: absolute;
+  width: 100%;
+  transform: rotate(180deg);
+  animation: waveMotion 3s ease-in-out infinite;
+}
+
+
+/* ensure global container constraint is visually enforced when using other max widths */
+body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+/* focus visible custom */
+:focus { outline: 2px solid transparent; outline-offset: 2px; }
+:focus-visible { outline: 3px solid rgba(99,102,241,0.6); border-radius: 6px; }
+

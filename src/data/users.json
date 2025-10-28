@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1761517015,
+        "name": "John Doe",
+        "email": "jj@gmail.com",
+        "password": "$2y$12$OoVotmkrp3sWSonNeutx5OmV04njP.mY7xMTQyEr8U2TxTnyNyS5a"
+    },
+    {
+        "id": 1761566543,
+        "name": "Gift Smith",
+        "email": "smith@gmail.com",
+        "password": "$2y$12$Xu.k8O3\/Dz8WjcwHQ94jm.uVM8Aq6I4tIYR0jJeim2Va9vSwMF7uG"
+    },
+    {
+        "id": 1761568090,
+        "name": "John Doe",
+        "email": "john@gmail.com",
+        "password": "$2y$12$RoSEnBHStomNX3o5SQC\/Z.ovIP2zLzynVtTcO73.d7NqSdc6Fuw6e"
+    },
+    {
+        "id": 1761626231,
+        "name": "John Doe",
+        "email": "test@mail.com",
+        "password": "$2y$12$eJZL3N4rcdEj6VJlfg48h.mAFQrcz7mMOcbAdhlXy6NXJvrfnNkFy"
+    }
+]

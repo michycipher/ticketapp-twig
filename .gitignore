@@ -1,0 +1,31 @@
+# Composer dependencies
+/vendor/
+
+# Environment config
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Logs and cache
+*.log
+/cache/
+/tmp/
+
+# PHPStorm and other IDEs
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# Node (if used for frontend assets)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build artifacts
+/public/build/
