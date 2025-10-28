@@ -1,6 +1,9 @@
 <?php
-
+// declare(strict_types=1);
+// session_start(); // start session once, globally
 declare(strict_types=1);
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+ini_set('display_errors', '1');
 session_start(); // start session once, globally
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -8,11 +11,12 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-session_start();
-
 // Twig setup
 $loader = new FilesystemLoader(__DIR__ . '/../templates');
 $twig = new Environment($loader);
+
+$twig->addGlobal('user', $_SESSION['user'] ?? null);
+$twig->addGlobal('isAuthenticated', isset($_SESSION['user']));
 
 // Basic router
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

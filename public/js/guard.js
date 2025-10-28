@@ -1,4 +1,4 @@
-// guard.js
+
 (() => {
   const sessionKey = 'ticketapp_session';
   function isProtected() {

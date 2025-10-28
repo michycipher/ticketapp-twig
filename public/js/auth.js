@@ -1,4 +1,4 @@
-// auth.js
+
 (() => {
   const sessionKey = 'ticketapp_session';
   // small helper

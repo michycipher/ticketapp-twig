@@ -154,13 +154,19 @@ class AuthController
         }
 
         // Always render the form once, after processing
+        // echo $this->twig->render('auth/login.twig', [
+        //     'errors' => $errors,
+        //     'old' => $_POST ?? [],
+        //     'isAuthenticated' => false,
+        //     'user' => null
+        // ]);
+
         echo $this->twig->render('auth/login.twig', [
             'errors' => $errors,
-            'old' => $_POST ?? [],
-            'isAuthenticated' => false,
-            'user' => null
+            'old' => $_POST ?? []
         ]);
     }
+
     public function logout()
     {
         setcookie('ticketapp_token', '', time() - 3600, "/");

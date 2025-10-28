@@ -1,4 +1,4 @@
-// tickets.js
+
 (() => {
   const TICKETS_KEY = 'ticketapp_tickets';
   const sessionKey = 'ticketapp_session';

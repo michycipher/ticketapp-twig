@@ -1,4 +1,4 @@
-// public/assets/js/app.js
+
 document.addEventListener('DOMContentLoaded', () => {
   // When landing on dashboard after server sets cookie 'ticketapp_token', copy it into localStorage key required
   const tokenCookie = (name => {
