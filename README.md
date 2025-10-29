@@ -1,6 +1,6 @@
 # Ticketing App — Twig + PHP + Local JSON Storage
 
-Welcome to your lightweight ticket management system built with **Twig**, **PHP**, and **Tailwind CSS**. This project is a server-rendered alternative to your Vue-based app, designed for simplicity, speed, and full control, no external APIs, no databases, just clean code and local storage.
+Welcome to your lightweight ticket management system built with **Twig**, **PHP**, and **Tailwind CSS**. This project is a server-rendered Twig-based app, designed for simplicity, speed, and full control, no external APIs, no databases, just clean code and local storage.
 
 ---
 
