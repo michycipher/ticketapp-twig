@@ -1,7 +1,7 @@
 {# templates/tickets/list.twig #}
 {% extends "layout.twig" %}
 {% block body %}
-  <div class="flex items-center justify-between mb-6">
+  <div class="flex items-center justify-between mb-6 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <h2 class="text-xl font-semibold">Tickets</h2>
     <div>
       <a href="/tickets/create" class="px-4 py-2 bg-green-600 text-white rounded">New Ticket</a>
@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1440px] mx-auto pb-24 px-4 sm:px-6 lg:px-8">
     {% for t in tickets %}
       <article class="bg-white p-4 rounded-lg shadow">
         <h3 class="font-semibold text-lg">{{ t.title }}</h3>
